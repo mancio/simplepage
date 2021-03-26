@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+</head>
+
+<body>
+
+<h1><strong>Hello!</strong></h1>
+<h2><em><strong>You see me so is working!</strong></em></h2>
+
+<script>
+function getIP(json) {
+  document.write("Your ip is: " + json.ip)
+}
+</script>
+<script src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
+
+</body>
+</html>
