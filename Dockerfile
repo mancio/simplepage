@@ -1,4 +1,5 @@
-FROM ubuntu
+FROM debian
+MAINTAINER Andrea Mancini
 RUN apt-get update
 RUN apt-get install nginx -y
 COPY index.html /var/www/html/
