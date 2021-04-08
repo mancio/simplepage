@@ -1,0 +1,8 @@
+#################################[ This file is placed in the Public Domain. ]#
+# Replace the following with your account details.
+
+kitename   = manciopi.pagekite.me
+kitesecret = {enter_your_secret}
+
+# Delete this line!
+#abort_not_configured
