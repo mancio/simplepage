@@ -26,4 +26,4 @@ services:
       - /home/pi/DockerVol/certbot/www/:/var/www/certbot/
     command: >
       bash -c "sleep 10s
-      && certbot certonly --webroot -w /var/www/certbot/ -d manciotech.fun -d www.manciotech.fun --agree-tos"
+      && certbot certonly --webroot -w /var/www/certbot/ -d manciotech.fun -d www.manciotech.fun --force-renewal --agree-tos"
