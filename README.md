@@ -47,7 +47,7 @@ forwarding the connection with https secure link.
 
 You can find inn the pagekite directory the files for manual configuration.
 
-### First rum
+### First run
 
 1. be sure `return 301 https://www.manciotech.fun;` is commented (to give the possibility 
    to certbot to access port 80)
@@ -56,6 +56,29 @@ You can find inn the pagekite directory the files for manual configuration.
 4. uncomment `return 301 https://www.manciotech.fun;` (force a secure connection)
 5. execute `docker-compose up`
 
+### Procedure for Zerossl
 
+Certbot is a pain in the ass?... did you remember to use `--dry-run` option? 
+Well, maybe is too late to issue new certificates (certbot has a limit).
+
+My suggestion id to ask for 90 days free certificate on ZeroSSL.
+
+Steps:
+1. Make an account
+2. Start the verification process using HTTP File Upload
+3. Give access to the folder `/.well-known/pki-validation/` to make it visible from your domain
+   like `mydomain.com/.well-known/pki-validation/`
+4. Save the TXT file in this space accessible by docker container and try to reach it like 
+   suggested by ZeroSSL
+5. If the test pass, download the certificate files, connect with cat, like the site say 
+   (eventually change file name and then change again to `certificate.crt`)
+6. Save the these files in the server and control in `nginx.conf` they can be reached both using
+   http 80 and https 443 ssl connection.
+   
+### Troubleshooting
+
+Sometimes happen certbot or SSL cannot reach the url of your site.
+To solve this issue try to restart pagekite before every docker-compose up
+using the command `sudo systemctl restart pagekite`
 
   
